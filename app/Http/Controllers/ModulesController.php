@@ -26,7 +26,7 @@ class ModulesController extends Controller
        
         
         Module::create($input);
-        return back()->with('success', 'New Category added successfully.');
+        return back()->with('success', 'New Module added successfully.');
     }
     public function addTestcase(Request $request)
     {
@@ -78,9 +78,8 @@ class ModulesController extends Controller
         }
         $Task->get();
         return Datatables::of($Task)->addIndexColumn()->addColumn('action', function($row){
-            $btn = '<a href="javascript:void(0)" width="10px" class="edit btn btn-primary btn-sm">View</a>';
-            $btn .= '<a href="javascript:void(0)" onclick="delete_task('.$row->id.')" class="delete btn btn-primary btn-sm">Delete</a>';
-            $btn .= '<a href="'.Storage::url('app/public/images/skills/' . $row->file).'" class="btn btn-primary btn-sm">Download</a>';
+            $btn = '<a href="javascript:void(0)" onclick="delete_task('.$row->id.')" class="delete btn btn-primary btn-sm">Delete</a>';
+            $btn .= '<a href="'.Storage::url('app/images/task/' . $row->file).'" class="btn btn-primary btn-sm">Download</a>';
             return $btn;
         })
         ->rawColumns(['action'])

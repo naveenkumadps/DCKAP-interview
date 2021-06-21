@@ -83,6 +83,10 @@ function task_table(module) {
   task_table(0)
 
   function delete_task(module_id) {
+    var result = confirm("Want to delete?");
+    if (result) {
+       
+    
         $.ajax({url: "task-delete/"+module_id, success: function(result){
 
             $('.delete_block').show();
@@ -93,6 +97,7 @@ function task_table(module) {
           task_table(0)
 
         }});
+    }
       
   }
   

@@ -90,12 +90,10 @@
 				  				<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 									{!! Form::label('name:') !!}
 									{!! Form::text('name', old('name'), ['id'=>"name",'class'=>'form-control', 'placeholder'=>'Enter name']) !!}
-									<span class="text-danger">{{ $errors->first('name') }}</span>
 								</div>
 								<div class="form-group {{ $errors->has('parent_id') ? 'has-error' : '' }}">
 									{!! Form::label('Module:') !!}
 									{!! Form::select('parent_id',$subModules, old('parent_id'), ['id'=>"parent_id",'class'=>'form-control', 'placeholder'=>'Select Module']) !!}
-									<span class="text-danger">{{ $errors->first('parent_id') }}</span>
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success add_module">Save</button>
@@ -121,23 +119,19 @@
                                 <div class="form-group {{ $errors->has('parent_id') ? 'has-error' : '' }}">
 									{!! Form::label('Module:') !!}
 									{!! Form::select('parent_id',$subModules, old('parent_id'), ['class'=>'form-control', 'placeholder'=>'Select Category']) !!}
-									<span class="text-danger">{{ $errors->first('parent_id') }}</span>
 								</div>
 
 				  				<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 									{!! Form::label('Test Case Title:') !!}
 									{!! Form::text('name', old('name'), ['class'=>'form-control', 'placeholder'=>'Enter title']) !!}
-									<span class="text-danger">{{ $errors->first('name') }}</span>
 								</div>
                                 <div class="form-group {{ $errors->has('summary') ? 'has-error' : '' }}">
 									{!! Form::label('Description:') !!}
 									{!! Form::textarea('summary', old('summary'), ['class'=>'form-control', 'placeholder'=>'Test Case Summary']) !!}
-									<span class="text-danger">{{ $errors->first('summary') }}</span>
 								</div>
                                 <div class="form-group {{ $errors->has('file') ? 'has-error' : '' }}">
 									{!! Form::label('File:') !!}
 									{!! Form::file('image', old('file'), ['class'=>'form-control']) !!}
-									<span class="text-danger">{{ $errors->first('file') }}</span>
 								</div>
 								<div class="form-group">
                                     <button class="btn btn-success">Save</button>
@@ -151,6 +145,11 @@
 		    </div>
 		  </div>
 		</div>
+								<span class="text-danger">{{ $errors->first('file') }}</span>
+								<span class="text-danger">{{ $errors->first('summary') }}</span>
+								<span class="text-danger">{{ $errors->first('parent_id') }}</span>
+								<span class="text-danger">{{ $errors->first('name') }}</span>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
